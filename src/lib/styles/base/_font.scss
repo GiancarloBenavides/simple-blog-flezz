@@ -1,0 +1,134 @@
+$font-base: system-ui, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', "Noto Sans", sans-serif;
+$font-code: 'SF Mono', 'Cascadia Code', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Mono', Consolas, monospace;
+$font-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$menu-bar-height: 3em;
+$input-height: 1.5rem;
+
+html {
+    // typography - reset text
+    font-family: $font-base;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: always;
+    //-webkit-text-size-adjust: 100%;
+    //-webkit-tap-highlight-color:
+    // misc - scroll
+    scroll-padding-top: $menu-bar-height;
+    scroll-behavior: smooth;
+    // misc - overflow
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    //-webkit-user-select: none;
+    //user-select: none;
+}
+
+body {
+    // Positioning
+    // Display & Box Model
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    padding: 0 7%;
+    // typography 
+    font-size: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    scroll-padding-top: $menu-bar-height - 2em;
+    // Visual
+    background-color: rgb(var(--surfaces));
+    color: rgb(var(--color) / 0.7);
+}
+
+nav.horizontal {
+    // Positioning
+    position: fixed;
+    //top: -2.5em;
+    top: 0;
+    left: 0;
+    // Display & Box Model
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: $menu-bar-height;
+    // Visual
+    background-color: rgb(var(--background) / .95);
+    border-bottom: 1px solid rgb(var(--color) / .25);
+    transition: top 0.3s;
+
+    ul {
+        height: calc(100% - 1em);
+        padding: 0 .5em;
+    }
+
+    li {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    a {
+        display: inline-block;
+        height: 100%;
+        line-height: 2;
+        vertical-align: middle;
+        text-decoration: none;
+        padding: 0 .5em;
+        border-radius: 8px;
+        color: rgb(var(--info) / 0.7);
+    }
+
+    a:hover {
+        background-color: rgb(var(--color) / calc(var(--alpha-correction) * 0.02));
+        color: rgb(var(--info) / 1);
+    }
+}
+
+a {
+    color: rgb(var(--info));
+}
+
+
+h1 {
+    margin-top: 2em;
+    color: rgb(var(--accent));
+}
+
+h2 {
+    color: rgb(var(--accent) / 0.7);
+}
+
+h3 {
+    color: rgb(var(--color) / 0.8);
+}
+
+table,
+p {
+    margin-top: .5em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 1em;
+}
+
+img {
+    margin-top: 1.5em;
+}
+
+/*
+--font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+--font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+--font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+--font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+--font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+--font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+*/

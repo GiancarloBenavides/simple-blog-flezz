@@ -1,0 +1,195 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:math';
+
+// Primary colors
+$color-pink: hsl(348, 70%, 50%);
+$color-fuchsia : hsl(302, 71%, 50%);
+$color-purple: hsl(256, 70%, 50%);
+$color-blue: hsl(212, 70%, 50%);
+$color-teal: hsl(174, 70%, 50%);
+$color-green: hsl(135, 70%, 50%);
+$color-yellow: hsl(54, 70%, 50%);
+$color-orange: hsl(35, 70%, 50%);
+
+// Theming Colors
+// Color that appears most frequently in your app
+$primary: $color-blue;
+// Color used to accent key parts of your UI
+$accent-degrees: -45; // hsl(240, 82%, 67%);
+$saturate-percent: 90; // hsl(240, 82%, 67%);
+// Color used to text
+$text: #000000;
+// Color used to background
+$last-background: #ffffff;
+
+// Semantic Colors
+$info: hsl(190, 90%, 44%);
+$success: hsl(146, 79%, 46%);
+$warning: hsl(37, 91%, 50%);
+$danger: hsl(339, 90%, 48%);
+
+//----------------------------
+//    Design System Color
+//----------------------------
+// Variants primary
+// Unsaturated colors that appears [ 60% ] | 30% | 10%
+$sat-1: round(math.div($saturate-percent, 10))*1%;
+$sat-2: round(math.div($saturate-percent, 7))*1%;
+$sat-3: round(math.div($saturate-percent, 5))*1%;
+$background: hsl(color.hue($primary), $sat-1, color.lightness($last-background)-1);
+$light-neutral: hsl(color.hue($primary), $sat-2, color.lightness($primary)-7);
+$light-surface: hsl(color.hue($primary), $sat-3, 85%);
+$dark-surface: hsl(color.hue($primary), $sat-3, 22%);
+$dark-neutral: hsl(color.hue($primary), $sat-2, color.lightness($primary)+9);
+$color: hsl(color.hue($primary), $sat-1, color.lightness($text)+5);
+
+// Variants primary
+// Color that appears 60% | [ 30% ] | 10%
+$sat-4: $saturate-percent * 1%;
+$sat-5: round(math.div($saturate-percent, 10))*9%;
+$sat-6: round(math.div($saturate-percent, 10))*8%;
+$dark-natural: hsl(color.hue($primary), $sat-4, 10%);
+$light-tertiary: hsl(color.hue($primary), $sat-5, 15%);
+$dark-secondary: hsl(color.hue($primary), $sat-6, 30%);
+$light-secondary: hsl(color.hue($primary), $sat-6, 75%);
+$dark-tertiary: hsl(color.hue($primary), $sat-5, 90%);
+$light-natural: hsl(color.hue($primary), $sat-4, 95%);
+
+// Variants accent
+// Color that appears 60% | 30% | [ 10% ]
+$light-accent: hsl(color.hue($primary)+$accent-degrees, 90%, 30%);
+$dark-accent: hsl(color.hue($primary)-$accent-degrees, 90%, 70%);
+
+// Variants semantic
+// Color that appears 60% | 30% | [ 10% ]
+$correction: 17;
+$primary-red: round(math.div(color.red($primary), $correction));
+$primary-green: round(math.div(color.green($primary), $correction));
+$primary-blue: round(math.div(color.blue($primary), $correction));
+
+$dark-info: rgb(color.red($info) + $primary-red, color.green($info) + $primary-green, color.blue($info) + $primary-blue);
+$dark-success: rgb(color.red($success) + $primary-red, color.green($success) + $primary-green, color.blue($success) + $primary-blue);
+$dark-warning: rgb(color.red($warning) + $primary-red, color.green($warning) + $primary-green, color.blue($warning) + $primary-blue);
+$dark-danger: rgb(color.red($danger) + $primary-red, color.green($danger) + $primary-green, color.blue($danger) + $primary-blue);
+
+// Colors channel
+$list-text: append(color.red($text) color.green($text), color.blue($text));
+$list-color: append(color.red($color) color.green($color), color.blue($color));
+$list-light-neutral: append(color.red($light-neutral) color.green($light-neutral), color.blue($light-neutral));
+$list-light-surface: append(color.red($light-surface) color.green($light-surface), color.blue($light-surface));
+$list-background: append(color.red($background) color.green($background), color.blue($background));
+$list-last-background: append(color.red($last-background) color.green($last-background), color.blue($last-background));
+
+$list-dark-neutral: append(color.red($dark-neutral) color.green($dark-neutral), color.blue($dark-neutral));
+$list-dark-surface: append(color.red($dark-surface) color.green($dark-surface), color.blue($dark-surface));
+
+$list-light-natural: append(color.red($light-natural) color.green($light-natural), color.blue($light-natural));
+$list-light-secondary: append(color.red($light-secondary) color.green($light-secondary), color.blue($light-secondary));
+$list-light-tertiary: append(color.red($light-tertiary) color.green($light-tertiary), color.blue($light-tertiary));
+$list-light-accent: append(color.red($light-accent) color.green($light-accent), color.blue($light-accent));
+
+$list-dark-natural: append(color.red($dark-natural) color.green($dark-natural), color.blue($dark-natural));
+$list-dark-secondary: append(color.red($dark-secondary) color.green($dark-secondary), color.blue($dark-secondary));
+$list-dark-tertiary: append(color.red($dark-tertiary) color.green($dark-tertiary), color.blue($dark-tertiary));
+$list-dark-accent: append(color.red($dark-accent) color.green($dark-accent), color.blue($dark-accent));
+
+$list-info: append(color.red($info) color.green($info), color.blue($info));
+$list-success: append(color.red($success) color.green($success), color.blue($success));
+$list-warning: append(color.red($warning) color.green($warning), color.blue($warning));
+$list-danger: append(color.red($danger) color.green($danger), color.blue($danger));
+
+$list-dark-info: append(color.red($dark-info) color.green($dark-info), color.blue($dark-info));
+$list-dark-success: append(color.red($dark-success) color.green($dark-success), color.blue($dark-success));
+$list-dark-warning: append(color.red($dark-warning) color.green($dark-warning), color.blue($dark-warning));
+$list-dark-danger: append(color.red($dark-danger) color.green($dark-danger), color.blue($dark-danger));
+
+@media (prefers-color-scheme: light) {
+
+    :root {
+        // surfaces color
+        --text: #{$list-text};
+        --color: #{$list-color};
+        --neutral: #{$list-light-neutral};
+        --surfaces: #{$list-light-surface};
+        --background: #{$list-background};
+        // controls color
+        --natural: #{$list-light-natural};
+        --secondary: #{$list-light-secondary};
+        --tertiary: #{$list-light-tertiary};
+        --accent: #{$list-light-accent};
+        // semantic colors
+        --info: #{$list-info};
+        --success: #{$list-success};
+        --warning: #{$list-warning};
+        --danger: #{$list-danger};
+        // alpha
+        --alpha-correction: 1;
+    }
+
+    [data-theme='dark'] {
+        // surfaces color
+        --text: #{$list-last-background};
+        --color: #{$list-background};
+        --neutral: #{$list-dark-neutral};
+        --surfaces: #{$list-dark-surface};
+        --background: #{$list-color};
+        // controls color
+        --natural: #{$list-dark-natural};
+        --secondary: #{$list-dark-secondary};
+        --tertiary: #{$list-dark-tertiary};
+        --accent: #{$list-dark-accent};
+        // semantic colors
+        --info: #{$list-dark-info};
+        --success: #{$list-dark-success};
+        --warning: #{$list-dark-warning};
+        --danger: #{$list-dark-danger};
+        // alpha
+        --alpha-correction: 2.6;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        // surfaces color
+        --text: #{$list-last-background};
+        --color: #{$list-background};
+        --neutral: #{$list-dark-neutral};
+        --surfaces: #{$list-dark-surface};
+        --background: #{$list-color};
+        // controls color
+        --natural: #{$list-dark-natural};
+        --secondary: #{$list-dark-secondary};
+        --tertiary: #{$list-dark-tertiary};
+        --accent: #{$list-dark-accent};
+        // semantic colors
+        --info: #{$list-dark-info};
+        --success: #{$list-dark-success};
+        --warning: #{$list-dark-warning};
+        --danger: #{$list-dark-danger};
+        // alpha
+        --alpha-correction: 3;
+    }
+
+    [data-theme='light'] {
+        // surfaces color
+        --text: #{$list-text};
+        --color: #{$list-color};
+        --neutral: #{$list-light-neutral};
+        --surfaces: #{$list-light-surface};
+        --background: #{$list-background};
+        // controls color
+        --natural: #{$list-light-natural};
+        --secondary: #{$list-light-secondary};
+        --tertiary: #{$list-light-tertiary};
+        --accent: #{$list-light-accent};
+        // semantic colors
+        --info: #{$list-info};
+        --success: #{$list-success};
+        --warning: #{$list-warning};
+        --danger: #{$list-danger};
+        // alpha
+        --alpha-correction: 1;
+    }
+}
