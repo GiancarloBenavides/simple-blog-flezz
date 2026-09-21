@@ -1,0 +1,110 @@
+.card {
+  position: relative;
+  justify-content: start;
+  vertical-align: middle;
+  box-sizing: content-box;
+  width: fit-content;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(131, 131, 131, 0.252);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+
+  & h3{
+    margin-top: 0;
+  }
+
+  &>img {
+    float: left;
+    vertical-align: middle;
+    display: inline;
+    width: 100%;
+  }
+
+  &>div {
+    vertical-align: middle;
+    display: inline-block;
+    height: 8rem;
+
+    padding-left: 1rem;
+    padding-right: 3rem;
+    margin-left: 0;
+
+    &>span {
+      position: absolute;
+      bottom: 7px;
+      right: 11px;
+      padding-top: 2px;
+      text-align: center;
+    }
+  }
+
+  & h3 {
+    color: var(--color-tertiary);
+    font-size: xx-large;
+    font-weight: 600;
+    min-width: 200px;
+  }
+
+  & div>span>a {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 50%;
+    padding: 5px;
+    margin-inline: 2px;
+  }
+
+  div>span>a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  div>span>a:active {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  time,
+  p {
+    position: relative;
+    font-size: 0.5em;
+  }
+
+  small {
+    color: rgba(118, 118, 118, 0.5);
+  }
+}
+
+div.card:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+  & img {
+    filter: brightness(1.05);
+  }
+}
+
+/* 40*16px = 640px*/
+@media (width >=40rem) {
+
+  /*div.card>img.stretch {}*/
+  div.card.stretch img {
+    height: 8rem;
+    width: auto;
+  }
+
+  /*div.card>img.extend {}*/
+  div.card.extend {
+    font-size: 1.4em;
+
+    & img {
+      width: 50%;
+    }
+  }
+
+  div.card.square {
+    width: calc(50% - var(--space-md));
+    display: inline-block;
+    margin-inline: var(--space-xs);
+  }
+}

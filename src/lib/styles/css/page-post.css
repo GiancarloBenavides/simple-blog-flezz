@@ -1,0 +1,171 @@
+section.blog {
+  & article header h2 {
+    margin-top: 2rem;
+  }
+}
+
+.cover {
+  position: relative;
+
+  & div {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+  }
+
+  & svg {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  & span {
+    font:
+      500 28px 'SecondaryFontMedium',
+      system-ui;
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  &::before {
+    content: '';
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
+}
+
+
+@layer components {
+  .render> :first-child {
+    margin-top: 0;
+  }
+
+  .render> :last-child {
+    margin-bottom: 0;
+  }
+
+  .render>p,
+  .render>ul,
+  .render>ol,
+  .render>dl,
+  .render>pre,
+  .render>table,
+  .render>figure,
+  .render>blockquote,
+  .render>aside,
+  .render>nav,
+  .render>div {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .render a:not(.button) {
+    text-decoration-line: underline;
+  }
+
+  .render em {
+    font-style: italic;
+  }
+
+  .render strong {
+    font-weight: bold;
+  }
+
+  .render ul>li {
+    padding-left: 3ch;
+  }
+
+  .render ul>li::before {
+    content: '\2014';
+    display: block;
+    float: left;
+    clear: left;
+    width: 3ch;
+    margin-left: -3ch;
+  }
+
+  .render ol {
+    counter-reset: ol;
+  }
+
+  .render ol>li {
+    padding-left: 3ch;
+  }
+
+  .render ol>li::before {
+    counter-increment: ol;
+    content: '0' counter(ol) '.';
+    display: block;
+    float: left;
+    clear: left;
+    width: 3ch;
+    margin-left: -3ch;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .render ol>li:nth-child(n + 10)::before {
+    content: counter(ol) '.';
+  }
+
+  .render>ul p,
+  .render>ol p {
+    margin-top: var(--space-xl);
+  }
+
+  .render blockquote {
+    border-left: 2px solid;
+    padding-left: calc(3ch - 2px);
+  }
+
+  .render code {
+    font-size: 16px;
+    padding: 2px 4px;
+    background-color: var(--color-shade);
+  }
+
+  .render pre {
+    white-space: pre-wrap;
+    background-color: var(--color-shade);
+    padding: 20px;
+    overflow-wrap: break-word;
+
+    & code {
+      display: block;
+      padding: 0;
+      font-size: 14px;
+      line-height: 20px;
+      background-color: transparent;
+    }
+  }
+
+  .render img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .render figure a {
+    display: block;
+  }
+
+  .render figcaption {
+    margin-top: 0.3rem;
+    font-size: 0.7rem;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .render figcaption>span {
+    font-weight: bold;
+  }
+
+}

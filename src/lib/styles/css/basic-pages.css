@@ -1,0 +1,12 @@
+.render>p>code {
+  padding-inline: 0.5em;
+  border-radius: 6px;
+  color: #b17f13;
+}
+
+.render li>p>code {
+  padding-inline: 0.5em;
+  border-radius: 6px;
+  color: #cc9319;
+}
+

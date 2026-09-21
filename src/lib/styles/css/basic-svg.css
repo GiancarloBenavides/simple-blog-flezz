@@ -1,0 +1,116 @@
+svg g,
+svg text {
+    font-size: 16px;
+    transition: transform 1s, font-size 1s;
+}
+
+svg text:hover {
+    filter: brightness(200%)
+}
+
+svg.mapa{
+
+    .fnt0 {font-weight: bold; font-size: 20px; font-family: 'Arial'}
+    .text-country, .subs {fill: black}
+    .text-mar {fill: #999999; fill-opacity: 0.501961}    
+    .back {fill: #6699FF; fill-opacity: 0.2}
+    .border {fill: #336699; fill-opacity: 0.1}
+    .leyenda .back{fill:white; fill-opacity: 0.4}
+    .leyenda .text{font-size: 13px}
+    .country{fill: #CCCCCC; fill-opacity: 0.4}
+    .fil0 {fill:none}
+    .str0{stroke:black;stroke-width:2;stroke-miterlimit:22.9256}
+    #CR,
+    #BR,
+    #EC {
+        fill: #999999;
+    }    
+}
+
+
+svg.mapa.caso {
+
+    .departamento {fill: #002060}
+    .pacifico {fill: #FF6900; fill-opacity: 0 }
+    .nar {fill: #FF6900}
+    .capital {fill: blue}
+    .col {fill: black; fill-opacity: 0.501961}
+    #Bogota:hover {fill: white}
+    #Colombia:hover {opacity: 0.5}
+    #Nariño:hover {fill: #ffc000}
+    #Pacifico:hover {fill-opacity: 1;}
+}
+
+svg.mapa.departamentos .departamento,
+svg.mapa.departamentos .connected {
+    fill: #00b050;
+}
+
+svg.mapa.departamentos .departamento:hover,
+svg.mapa.departamentos .municipio:hover {
+    fill: #ffffff;
+}
+
+svg.mapa.departamentos {
+    #CO-AMA,
+    #CO-VAU,
+    #CO-GUA,
+    #CO-VID {
+        fill: #c00000;
+    }
+    #CO-AMA:hover,
+    #CO-VAU:hover,
+    #CO-GUA:hover,
+    #CO-VID:hover,
+    .not-connected {
+        fill: #b00000;
+    }
+    #CO-PUT,
+    #CO-CAQ,
+    #CO-MET,
+    #CO-CAS,
+    #CO-GUV,
+    #CO-CHO,
+    #CO-CAU,
+    #CO-VAC,
+    #CO-LAG,
+    #CO-NAR,
+    .partly {
+        fill: #ffc000;
+    }
+    #CO-PUT:hover,
+    #CO-CAQ:hover,
+    #CO-MET:hover,
+    #CO-CAS:hover,
+    #CO-GUV:hover,
+    #CO-CHO:hover,
+    #CO-CAU:hover,
+    #CO-VAC:hover,
+    #CO-LAG:hover,
+    #CO-NAR:hover {
+        fill: #ffffff;
+    }
+}
+svg g.sin{
+    fill-rule:nonzero;
+    .sin-str0 {stroke:black;stroke-width:0.9;stroke-miterlimit:22.9256}
+    .sin-str1{stroke:red;stroke-width:0.9;stroke-miterlimit:22.9256}
+    .sin-str2{fill:white;stroke:black;stroke-width:0.9;stroke-miterlimit:22.9256}
+    .sin-fil0 {fill:none}
+    .sin-fil1 {fill:black}
+    .sin-fil2 {fill:orangered}
+    .sin-fil3 {fill:maroon}
+    .sin-fil4 {fill:green}
+    .sin-fil5 {fill:aqua}
+    .sin-fil6 {fill:blue}
+    .sin-fil7 {fill:fuchsia}
+    .sin-fil8 {fill:#ffc000}
+    .sin-fil9{fill:red;}
+
+}
+
+svg.mapa.sin {
+    .departamento {fill: black}
+    .fil19{fill:#FF9900;}
+    .departamento:hover{fill:white}
+}

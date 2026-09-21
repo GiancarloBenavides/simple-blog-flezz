@@ -1,0 +1,5 @@
+.collection {
+  & li svg {
+    width: 24px;
+  }
+}

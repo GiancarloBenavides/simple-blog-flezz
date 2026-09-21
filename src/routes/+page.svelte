@@ -1,36 +1,21 @@
 <script>
-  import config from "/src/config";
-  import Seo from "$lib/Seo.svelte";
-  import Title from "$lib/ui/Title.svelte";
+import config from '/src/config';
+import Seo from '$lib/Seo.svelte';
+import Article from '$lib/Article.svelte';
 
+let { data } = $props();
 </script>
 
 <Seo
-  title={`${config.siteTitle} — ${config.siteTagline}`}
-  description="descripción de la pagina"
-  og={{ title: config.siteTagline }}
+  title={`${config.title} — ${config.slogan}`}
+  description={config.description}
+  og={{ title: config.slogan }}
 />
 
 <section>
-  <article>
-    <Title>Titulo</Title>
-    <div>
-      <p>
-      </p>
-      <p>
-      </p>
-    </div>
-  </article>
-</section>
-
-<section>
-  <article>
-    <Title>Titulo</Title>
-    <div>
-      <p>
-      </p>
-      <p>
-      </p>
-    </div>
-  </article>
+  {#each data.partials as partial (partial.id)}
+    <Article type="render text-xl" title={partial.title}>
+      {@html partial.content}
+    </Article>
+  {/each}
 </section>

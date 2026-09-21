@@ -4,9 +4,5 @@ import tailwindcss from '@tailwindcss/vite';
 import FullReload from 'vite-plugin-full-reload';
 
 export default defineConfig({
-  plugins: [
-    sveltekit(),
-    tailwindcss(),
-    FullReload(['content/**/*'])
-  ],
+  plugins: [sveltekit(), tailwindcss(), FullReload(['content/**/*'])],
 });

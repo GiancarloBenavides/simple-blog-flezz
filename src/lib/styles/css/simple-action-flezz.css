@@ -1,0 +1,129 @@
+.action {
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    &>span {
+        width: 100px;
+        height: 20px;
+        border-bottom: 2px solid var(--color-link);
+        width: calc(99% - 45px);
+        display: inline-block;
+        margin-bottom: 11px;
+        text-align: center;
+    }
+
+    &>button {
+        margin-left: 4px;
+        display: inline-flex;
+        height: 36px;
+        width: 36px;
+        border-radius: 36px;
+        border: 2px solid var(--color-link);
+
+        & svg {
+            color: var(--color-link);
+            margin: auto;
+            width: 24px;
+        }
+    }
+
+    button:hover {
+        background-color: var(--color-link);
+
+        border-color: var(--color-link);
+
+        & svg {
+            color: var(--color-background);
+        }
+
+    }
+
+}
+
+.shared-networks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*
+    background-color: rgb(from var(--color-text) r g b / 0.7);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.75) inset;
+    min-height: 96px;
+    padding: 30px;
+    */
+    border: 1px solid rgb(122, 122, 122);
+    margin-block: 1em;
+    padding-inline: 2rem;
+    border-radius: 4px;
+
+    text-align: center;
+    font-size: 0.8em;
+
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: 0.4s;
+
+    &>span {
+        display: none;
+        font-weight: bold;
+        line-height: 36px;
+        height: 36px;
+        margin-right: 1em;
+        color: var(--color-text);
+    }
+
+    &>button,
+    &>a {
+        margin-left: .4em;
+        display: inline-flex;
+        /*width: 36px;*/
+        height: 36px;
+        /*box-shadow: 0 3px 1px -2px #00000033, 0 2px 2px 0 #00000024, 0 1px 5px 0 #0000001f;
+        background-color: rgb(from var(--color-tertiary) r g b / 0.5);*/
+        color: var(--color-text);
+        border-radius: 36px;
+        border: 1px solid #7a7a7a;
+        text-align: center;
+        padding-inline: 6px;
+        line-height: 36px;
+
+        &>span {
+            margin-inline: 7px;
+        }
+    }
+
+    &>button:hover,
+    &>a:hover {
+        /*background-color: var(--color-text);*/
+        color: var(--color-link);
+        border-color: var(--color-link);
+    }
+
+    &>button:active,
+    &>a:active {
+        box-shadow: none;
+    }
+
+    &>button svg,
+    &>a svg {
+        margin: auto;
+    }
+
+}
+
+[data-state="open"] {
+    height: 5rem;
+    opacity: 1;
+}
+
+/* 48*16px = 768px*/
+@media (width >=48rem) {
+    .shared-networks {
+        justify-content: flex-start;
+
+        &>span {
+            display: block;
+
+        }
+    }
+}

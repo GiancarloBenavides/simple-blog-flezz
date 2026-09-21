@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+/* purgecss start ignore */
+
+@import './basic-frames';
+@import './basic-pages';
+@import './basic-svg';
+@import './page-author';
+@import './page-post';
+@import './part-collection';
+@import './part-iframe';
+@import './simple-action-flezz';
+@import './simple-card-flezz';
+@import './simple-collage-flezz';
+@import './simple-photo-flezz';
+@import './simple-table-flezz';
+@import './simple-ui-flezz';
+
+/*
+  
+  --color-text: var(--color-neutral-50);
+  --color-background: var(--color-white);
+
+  --color-text: var(--color-white);
+  --color-background: var(--color-black);  
+  
+*/
+
+@theme {
+  --color-text: var(--color-neutral-950);
+  --color-background: var(--color-white);
+  --color-shade: color-mix(in srgb, var(--color-text), transparent 95%);
+  --spacing-container: 49rem;
+  --text-action: 18px;
+  --text-action--line-height: 24px;
+  --text-metadata: 20px;
+  --text-metadata--line-height: 24px;
+  --text-xl--line-height: 1.25;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: var(--color-neutral-100);
+    --color-background: var(--color-neutral-950);
+  }
+}
+
+@layer base {
+  body {
+    color: var(--color-text);
+    background-color: var(--color-background);
+    text-underline-offset: 2px;
+
+    & * {
+      text-decoration-thickness: 1px;
+    }
+  }
+}
+
+/* 48*16px = 768px*/
+@media (width >= 110rem) {
+  .container {
+    --spacing-container: 80rem;
+    max-width: 55rem;
+  }
+
+}

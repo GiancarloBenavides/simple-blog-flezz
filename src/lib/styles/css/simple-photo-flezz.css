@@ -1,0 +1,36 @@
+.photo {
+    --size: 100px;
+    position: relative;
+    width: 100%;
+    height: var(--size);
+    margin-bottom: var(--space-sm);
+    overflow: hidden;
+
+    &>img {
+        width: var(--size);
+        clip-path: polygon(50% 3%, 92% 26%, 92% 74%, 50% 97%, 8% 74%, 8% 26%);
+        filter: grayscale(0.8);
+        margin: auto;
+    }
+
+    &>svg {
+        position: absolute;
+        width: var(--size);
+        fill: var(--color-background, white);
+        top: 0;
+        left: calc(50% - calc(var(--size) / 2));
+    }
+}
+
+.photo:hover>img {
+    transform: scale(1.1);
+}
+
+
+/* 48*16px = 768px*/
+@media (width >=48rem) {
+    .photo {
+        float: right;
+        width: auto;
+    }
+}

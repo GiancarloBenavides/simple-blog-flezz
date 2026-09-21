@@ -1,0 +1,172 @@
+.render>table {
+  --color-text-small: hwb(from var(--color-text) h w b / 0.5);
+  --color-line-interno: hwb(from var(--color-text) h w b / 0.1);
+  --color-line-externo: hwb(from var(--color-text) h w b / 0.2);
+  --color-rows: hwb(from var(--color-text) h w b / 0.02);
+  --color-rows-hover: hwb(from var(--color-text) h w b / 0.1);
+  --border-radius: 6px;
+  border-collapse: separate;
+  border-image: initial;
+  table-layout: fixed;
+  overflow: unset;
+  border-spacing: 0px;
+  /*border-width: 1px;*/
+  border-style: solid;
+  border-spacing: 0;
+  width: 100%;
+
+  border-color: var(--borderColor-default, var(--color-border-default, #30363d));
+
+  & thead>tr>th {
+    background-color: var(--color-text);
+    color: var(--color-background);
+    border-bottom: 1px solid var(--color-line-interno);
+    padding: 0.5em;
+  }
+
+  & td {
+    border-left: 1px solid var(--color-line-interno);
+    border-top: 1px solid var(--color-line-interno);
+    padding: 0.5em;
+    padding-left: 1rem;
+  }
+
+  & td:first-child {
+    border-left: 1px solid var(--color-line-externo);
+    font-weight: 500;
+  }
+
+  & td:last-child {
+    border-right: 1px solid var(--color-line-externo);
+  }
+
+  & tr:last-child td {
+    border-bottom: 1px solid var(--color-line-externo);
+  }
+
+  & tr:nth-child(2n) {
+    background-color: var(--color-rows);
+  }
+
+  tr:hover {
+    background-color: var(--color-rows-hover);
+  }
+
+  & thead>tr:first-child th:first-child {
+    border-top: 1px solid var(--color-line-externo);
+    border-left: 1px solid var(--color-line-externo);
+    border-top-left-radius: var(--border-radius);
+  }
+
+  & thead>tr:first-child th:last-child {
+    border-top: 1px solid var(--color-line-externo);
+    border-right: 1px solid var(--color-line-externo);
+    border-top-right-radius: var(--border-radius);
+  }
+
+  tr:last-child td:first-child {
+    border-bottom: 1px solid var(--color-line-externo);
+    border-left: 1px solid var(--color-line-externo);
+    border-bottom-left-radius: var(--border-radius);
+  }
+
+  tr:last-child td:last-child {
+    border-bottom: 1px solid var(--color-line-externo);
+    border-right: 1px solid var(--color-line-externo);
+    border-bottom-right-radius: var(--border-radius);
+  }
+
+  & small {
+    color: var(--color-text-small);
+  }
+
+  & ul li::before {
+    content: '→';
+  }
+
+  & code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 78%;
+    white-space: break-spaces;
+    background-color: #6e768166;
+    border-radius: 6px;
+  }
+}
+
+
+
+table:has(td:nth-of-type(1):hover) tr:first-of-type th:nth-of-type(1),
+table:has(td:nth-of-type(2):hover) tr:first-of-type th:nth-of-type(2),
+table:has(td:nth-of-type(3):hover) tr:first-of-type th:nth-of-type(3),
+table:has(td:nth-of-type(4):hover) tr:first-of-type th:nth-of-type(4),
+table:has(td:nth-of-type(5):hover) tr:first-of-type th:nth-of-type(5),
+table:has(td:nth-of-type(6):hover) tr:first-of-type th:nth-of-type(6),
+table:has(td:nth-of-type(7):hover) tr:first-of-type th:nth-of-type(7),
+table:has(td:nth-of-type(8):hover) tr:first-of-type th:nth-of-type(8),
+table:has(td:nth-of-type(9):hover) tr:first-of-type th:nth-of-type(9),
+table:has(td:nth-of-type(10):hover) tr:first-of-type th:nth-of-type(10) {
+  color: var(--color-secondary);
+}
+
+
+.render.c4>table {
+
+  & td:first-child,
+  & th:first-child {
+    display: none;
+    width: 4rem;
+  }
+
+  & td:nth-child(2),
+  & th:nth-child(2) {
+    width: 10rem;
+  }
+
+  & td:last-child,
+  & th:last-child {
+    display: none;
+    width: 10rem;
+  }
+}
+
+caption {
+  font-size: 0.7rem;
+  text-align: center;
+  font-style: italic;
+
+  & span {
+    font-weight: bold;
+  }
+}
+
+table.only-caption {
+  border: none;
+
+  & caption {
+    position: relative;
+    margin-top: calc(calc(var(--space-xl) * -1) + 0.4rem);
+  }
+}
+
+/* 40*16px = 640px*/
+@media (width >=40rem) {
+  .render.c4>table {
+
+    & td:last-child,
+    & th:last-child {
+      display: table-cell;
+    }
+  }
+}
+
+/* 48*16px = 768px*/
+@media (width >=48rem) {
+  .render.c4>table {
+
+    & td:first-child,
+    & th:first-child {
+      display: table-cell;
+    }
+  }
+}

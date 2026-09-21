@@ -13,6 +13,6 @@ let {
 <figure>
   <img {src} {srcset} {width} {height} {alt} />
   {#if caption}
-    <figcaption><span>Imagen {number}. </span> {caption}</figcaption>
+    <figcaption><span>Imagen {number}. </span> {caption}.</figcaption>
   {/if}
 </figure>
